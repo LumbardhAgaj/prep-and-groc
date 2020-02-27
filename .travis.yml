@@ -1,0 +1,44 @@
+os: linux
+dist: trusty
+language: node_js
+node_js:
+- 10.16.3
+services:
+- mongodb
+cache:
+- npm: false
+env:
+- PROJECT_PATH=client/
+- PROJECT_PATH=server/ DB_HOST=localhost DB_PORT=27017 DB_URI_PREFIX=mongodb:// DB_COLLECTION=prepandgroc
+before_install:
+- "$TRAVIS_BUILD_DIR/.travis/create_npm_registry_for_bit.sh"
+- export NODE_ENV=test
+- export HOST=localhost
+- export PORT=3000
+install:
+- cd $TRAVIS_BUILD_DIR/$PROJECT_PATH && npm install
+script: cd $TRAVIS_BUILD_DIR/$PROJECT_PATH && npm test
+stages:
+- test
+- deploy
+jobs:
+  include:
+  - stage: deploy
+    env: NODE_ENV=production
+    before_install:
+    - "$TRAVIS_BUILD_DIR/.travis/create_npm_registry_for_bit.sh"
+    install:
+    - cd $TRAVIS_BUILD_DIR/client && npm install
+    script: cd $TRAVIS_BUILD_DIR/client && npm run build
+    after_success:
+    - cp -r $TRAVIS_BUILD_DIR/client/build $TRAVIS_BUILD_DIR/server/public
+    - cp ~/.npmrc $TRAVIS_BUILD_DIR/server/.npmrc
+    - cd $TRAVIS_BUILD_DIR/server
+    deploy:
+      on:
+        branch: stable
+      skip_cleanup: true
+      provider: heroku
+      app: prep-and-groc
+      api_key:
+        secure: C+kn3eohgvE7mk7jXrQwWaoGyxk5Q2NBh5IgRJZfuZWz/2A3bigZOT3M6f50od+KBcAWkDX9EZoKk3DsNaaalSfDwSjCNnk13T6O68pqrNR2+vZgIc4o0dH5Vw4+TVcSM810PFZwCwQTPjKGbxqmlk3xyW/mT3A8WPh1PwibkXr98FzRTbI5vPHpeikvoqA6LpPjy6AxZvU3qSZK2y2audgRsj8fWpRn2/Ch5PCbW3Vo2PHAVmlAaLvpzoGn6xdd63uzp5SvdtDyf2tc4yc1QG/SCv/gpXt8c3sZDOx7vduZDLf/iejvwqiOqGUMqeIVRRAMHplgosHqP8waJOAJFIJyZktZe2r2f9w9ONc5RVQikPWsg1jkOrRjmR45mBmUzcn0cO4h0QpNRUCad3vmFJ/tP/tGSWSM3TL4lkHKMeG/PyJGRrKS1dJ0S47OjkgCx20OBNJVTzOqTcj2w05dKM6vgBdTTkLYYZjqCSS7bHKF7Uc06jtG24sT7rj4ltrznilEAqglCnQMqO+vbAV5tY0eHkysqdI/MIfdkg5VhuW7BAS4/EjZt6ivb/9tIUWjpd29XTrUIVobvEkEua+8ouo4Syz1h5prqR3hmuMqfiqQDuQFTLKr4kv6d22ooh/qglxPBPTSqZ9NA98IQwH05fvQKZm1u7ySoYdQJIkrclo=

@@ -1,0 +1,43 @@
+{
+  "name": "prep-and-groc",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@bit/agajlumbardh.prep-and-groc-validators.fridge": "^1.0.0",
+    "@bit/agajlumbardh.prep-and-groc-validators.recipe": "^1.0.0",
+    "@bit/agajlumbardh.prep-and-groc-validators.user": "^1.0.0",
+    "bootstrap": "^4.3.1",
+    "bson-objectid": "^1.2.4",
+    "formik": "^1.5.4",
+    "query-string": "^6.9.0",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.2.0",
+    "react-select": "^3.0.4",
+    "styled-components": "^4.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^8.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
+  }
+}

@@ -1,0 +1,15 @@
+[
+    {"value":"gr","label":"gr","id":"gr-label"},
+    {"value":"kg","label":"kg","id":"kg-label"},
+    {"value":"oz","label":"oz","id":"oz-label"},
+    {"value":"lb","label":"lb","id":"lb-label"},
+    {"value":"tsp","label":"tsp","id":"tsp-label"},
+    {"value":"tbsp","label":"tbsp","id":"tbsp-label"},
+    {"value":"cup","label":"cup","id":"cup-label"},
+    {"value":"pint","label":"pint","id":"pint-label"},
+    {"value":"quart","label":"quart","id":"quart-label"},
+    {"value":"gal","label":"gal","id":"gal-label"},
+    {"value":"ml","label":"ml","id":"ml-label"},
+    {"value":"L","label":"L","id":"L-label"},
+    {"value":"piece","label":"piece/s","id":"piece-label"}
+]

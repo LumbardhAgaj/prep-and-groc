@@ -1,0 +1,52 @@
+{
+  "name": "prep-and-groc",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/bin/www/run.js",
+    "test": "mocha --exit src/**/*.test.js",
+    "dev:test": "nodemon -x \"mocha src/**/*.test.js \"",
+    "dev:client": "cd ../client && npm start",
+    "dev:server": "nodemon -r dotenv/config ./src/bin/www/run.js",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "dependencies": {
+    "@bit/agajlumbardh.prep-and-groc-validators.fridge": "^1.0.0",
+    "@bit/agajlumbardh.prep-and-groc-validators.grocery": "^1.0.0",
+    "@bit/agajlumbardh.prep-and-groc-validators.recipe": "^1.0.0",
+    "@bit/agajlumbardh.prep-and-groc-validators.user": "^1.0.0",
+    "bcrypt": "3.0.6",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.6",
+    "morgan": "~1.9.0",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "faker": "^4.1.0",
+    "mocha": "^6.2.0",
+    "prettier": "^1.19.1"
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  },
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.9.0"
+  }
+}

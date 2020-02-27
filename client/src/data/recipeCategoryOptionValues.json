@@ -1,0 +1,15 @@
+[   {"label":"Beef","value":"Beef","id":"Beef-label"},
+    {"label":"Desert","value":"Desert","id":"Desert-label"},
+    {"label":"Chicken","value":"Chicken","id":"Chicken-label"},
+    {"label":"Goat","value":"Goat","id":"Goat-label"},
+    {"label":"Lamb","value":"Lamb","id":"Lamb-label"},
+    {"label":"Pasta","value":"Pasta","id":"Pasta-label"},
+    {"label":"Miscellaneous","value":"Miscellaneous","id":"Miscellaneous-label"},
+    {"label":"Pork","value":"Pork","id":"Pork-label"},
+    {"label":"Side","value":"Side","id":"Side-label"},
+    {"label":"Starter","value":"Starter","id":"Starter-label"},
+    {"label":"Seafood","value":"Seafood","id":"Seafood-label"},
+    {"label":"Vegan","value":"Vegan","id":"Vegan-label"},
+    {"label":"Vegetarian","value":"Vegetarian","id":"Vegetarian-label"},
+    {"label":"Breakfast","value":"Breakfast","id":"Breakfast-label"}
+]
